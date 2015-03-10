@@ -1,0 +1,1 @@
+window.PDFExport = require('./PDFExport');
