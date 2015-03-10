@@ -1,8 +1,8 @@
 module.exports = {
     entry: "./main.js",
     output: {
-        path: __dirname + '/public/',
-        filename: "main.js",
+        path: __dirname + '/dist/',
+        filename: "pdfexport.min.js",
         publicPath: ""
     },
     module: {
