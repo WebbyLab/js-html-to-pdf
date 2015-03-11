@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> HTML TO PDF Example </title>
+        <meta name="description" content="">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+        <script src="../dist/pdfexport.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="bower_components/jspdf/dist/jspdf.min.js"></script>
+        <script src="bower_components/html2canvas/dist/html2canvas.min.js"></script>
+        <script type="text/javascript">
+            window.generatePDF = function generatePDF() {
+                var format = 'a4';
+                var pdfExport = new PDFExport(format);
+                var domNode = document.getElementById('content');
+
+                pdfExport.createPageScreenshot(domNode).then(function () {
+                    pdfExport.downloadDocument();
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+            <svg height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="blue" />
+            </svg>
+        </div>
+        <button onclick="generatePDF()">Generate PDF</button>
+    </body>
+</html>

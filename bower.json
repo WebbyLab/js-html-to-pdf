@@ -1,0 +1,21 @@
+{
+  "name": "HTML2PDF",
+  "version": "0.1.0",
+  "authors": [
+    "webbylab <admin@webbylab.com>"
+  ],
+  "description": "HTML2PDF",
+  "main": "public/js/app/app.js",
+  "license": "WebbyLab",
+  "homepage": "http://webbylab.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "example/bower_components"
+  ],
+  "dependencies": {
+    "jspdf": "1.0.272",
+    "html2canvas": "0.5.0-alpha2"
+  }
+}

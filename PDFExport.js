@@ -15,38 +15,9 @@ class PDFExport {
     createPageScreenshot(domNode) {
         var defer = Q.defer();
 
-        var self = this;
-
-        $(domNode).find('svg').each( function() {
-            self._convertSVGtoCanvas(this);
-        });
-
         this.pdfDocument.addHTML(domNode,() => defer.resolve());
 
         return defer.promise;
-    }
-
-    _convertSVGtoCanvas(element) {
-        var $svg = $(element);
-        var svg  = $svg.parent().html();
-
-        var height = $svg.height();
-        var width = $svg.width();
-
-        var $canvas = $('<canvas>');
-
-        var canvas  = $canvas.attr({
-            height: height,
-            width:  width
-        })[0];
-
-        var context = canvas.getContext('2d');
-
-        context.drawSvg(svg,0,0,width,height);
-
-        $svg.hide();
-
-        $(element).parent().append($canvas);
     }
 
     downloadDocument() {
