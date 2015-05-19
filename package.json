@@ -1,0 +1,25 @@
+{
+  "name": "HTML2PDF",
+  "version": "1.0.0",
+  "description": "html 2 pdf facade",
+  "author": {
+    "name": "WebbyLab",
+    "email": "office@webbylab.com",
+    "url": "http://webbylab.com"
+  },
+  "private": true,
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack -d --watch --colors"
+  },
+  "dependencies": {
+    "babel-core": "^4.7.7",
+    "babel-loader": "^4.1.0",
+    "q": "*"
+  },
+  "devDependencies": {
+    "url-loader": "*",
+    "webpack": "*",
+    "babel": "*"
+  }
+}
